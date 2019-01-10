@@ -20,9 +20,9 @@ This project is developed on Python Platform. This is a PDF Scraping program.
 > - $ **cd scraping**
 
 ###### Run Project
-> $ **python3 scraping.py <Absolute PDF File Path> <Header String> <OCR Mode On/Off>**
+> $ **python3 scraping.py Absolute_PDF_File_Path Header_String OCR_Mode_On/Off**
 
 ###### Example
-> $ **python3 scraping.py "/home/myDesktop/ACC.pdf" "Management Discussion and Analysis" 0 **
+> $ python3 scraping.py "/home/myDesktop/ACC.pdf" "Management Discussion and Analysis" 0
 
 - **Keep in mind** : If OCR Mode is enable, it will take longer time.
