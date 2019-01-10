@@ -140,6 +140,28 @@ splited_file_name = split_page( FILE_NAME , page_no )
 if OCR_ENABLE:
 	new_jpeg = pdf_to_jpg(splited_file_name)
 	ocr_file = make_ocr(new_jpeg)
+	
+	print("\n\n =======Table Contents=======\n\n")
 	print(get_table(ocr_file))
+	print("\n\n========================\n\n")
+	
+	print("\n\n=======Data Contents=======\n\n")
+	pdf_file = open(ocr_file, "rb")
+	read_pdf = PyPDF2.PdfFileReader(pdf_file)
+	page = read_pdf.getPage(0)
+	page_content = page.extractText()
+	print(page_content)
+	print("\n\n========================\n\n")
+	
 else:
+	print("\n\n =======Table Contents=======\n\n")
 	print(get_table(splited_file_name))
+	print("\n\n========================\n\n")
+
+	print("\n\n =======Data Contents=======\n\n")
+	pdf_file = open(splited_file_name, "rb")
+	read_pdf = PyPDF2.PdfFileReader(pdf_file)
+	page = read_pdf.getPage(0)
+	page_content = page.extractText()
+	print(page_content)
+	print("\n\n========================\n\n")
